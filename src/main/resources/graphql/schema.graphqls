@@ -1,0 +1,67 @@
+type Query {
+    todasConsultas(token: String!): [Consulta!]!
+    consultasPaciente(pacienteId: ID!, token: String!): [Consulta!]!
+    consultasPorId(id: ID!, token: String!): Consulta
+    consultasPorPeriodo(dataInicio: String!, dataFim: String!, token: String!): [Consulta!]!
+    pacientes(token: String!): [Paciente!]!
+    pacientePorId(id: ID!, token: String!): Paciente
+    medicos(token: String!): [Medico!]!
+    medicoPorId(id: ID!, token: String!): Medico
+}
+
+
+
+type Mutation {
+    # Mutations existentes (suas)
+    criarConsulta(
+        dataHora: String!
+        pacienteId: ID!
+        medicoId: ID!
+        descricao: String!
+        token: String!
+    ): Consulta
+
+    atualizarConsulta(
+        id: ID!
+        descricao: String
+        token: String!
+    ): Consulta
+
+    # Nova mutation que você pode adicionar
+    deletarConsulta(
+        id: ID!
+        token: String!
+    ): Boolean
+}
+
+
+# Tipos existentes (seus)
+type Consulta {
+    id: ID!
+    dataHora: String
+    descricao: String
+    paciente: Paciente
+    medico: Medico
+}
+
+type Paciente {
+    id: ID!
+    nome: String
+    cpf: String
+    telefone: String
+}
+
+type Medico {
+    id: ID!
+    nome: String
+    crm: String
+}
+
+
+# Input types para mutations
+input ConsultaInput {
+    dataHora: String!
+    pacienteId: ID!
+    medicoId: ID!
+    descricao: String!
+}
