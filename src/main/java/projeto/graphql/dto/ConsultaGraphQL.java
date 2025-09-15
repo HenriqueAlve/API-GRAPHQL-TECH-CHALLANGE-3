@@ -1,27 +1,24 @@
 package projeto.graphql.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.time.LocalDateTime;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ConsultaGraphQL {
     private String id;
-
-    //@JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
-    private String  dataHora;
-
+    private String dataHora; // mantenha como String para evitar dor com LocalDateTime
     private String descricao;
-
     private PacienteGraphQL paciente;
     private MedicoGraphQL medico;
 
-    // Getters e Setters
     public String getId() { return id; }
     public void setId(String id) { this.id = id; }
 
-    public String  getDataHora() { return dataHora; }
-    public void setDataHora(String  dataHora) { this.dataHora = dataHora; }
+    public String getDataHora() { return dataHora; }
+    public void setDataHora(String dataHora) { this.dataHora = dataHora; }
 
     public String getDescricao() { return descricao; }
     public void setDescricao(String descricao) { this.descricao = descricao; }
