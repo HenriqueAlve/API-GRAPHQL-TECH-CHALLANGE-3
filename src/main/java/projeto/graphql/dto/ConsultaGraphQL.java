@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ConsultaGraphQL {
     private String id;
-    private String dataHora; // mantenha como String para evitar dor com LocalDateTime
+    private String dataHora;
     private String descricao;
     private PacienteGraphQL paciente;
     private MedicoGraphQL medico;

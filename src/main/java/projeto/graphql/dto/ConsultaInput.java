@@ -6,7 +6,6 @@ public class ConsultaInput {
     private String medicoId;
     private String descricao;
 
-    // Construtores
     public ConsultaInput() {}
 
     public ConsultaInput(String dataHora, String pacienteId, String medicoId, String descricao) {
@@ -16,7 +15,7 @@ public class ConsultaInput {
         this.descricao = descricao;
     }
 
-    // Getters e Setters
+
     public String getDataHora() { return dataHora; }
     public void setDataHora(String dataHora) { this.dataHora = dataHora; }
 
