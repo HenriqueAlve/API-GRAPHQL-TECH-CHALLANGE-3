@@ -14,7 +14,6 @@
 
 	<groupId>projeto</groupId>
 	<artifactId>graphql</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
 	<name>graphql</name>
 	<description>Demo project for Spring Boot 3 + GraphQL</description>
 
@@ -57,6 +56,7 @@
 		</dependency>
 	</dependencies>
 	<build>
+        <finalName>graphql</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
