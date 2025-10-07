@@ -26,7 +26,6 @@ public class ConsultaMutationResolver {
         this.restTemplate = restTemplate;
     }
 
-    // -------------------- CRIAR --------------------
     @MutationMapping
     public ConsultaGraphQL criarConsulta(@Argument String dataHora,
                                          @Argument String pacienteId,
@@ -52,8 +51,6 @@ public class ConsultaMutationResolver {
             );
         }
     }
-
-    // -------------------- ATUALIZAR --------------------
     @MutationMapping
     public ConsultaGraphQL atualizarConsulta(@Argument String id,
                                              @Argument String descricao,
@@ -74,7 +71,6 @@ public class ConsultaMutationResolver {
                     id
             );
 
-            // Retornar a consulta atualizada
             ResponseEntity<ConsultaGraphQL> updated = restTemplate.exchange(
                     baseUrl + "/consultas/{id}",
                     HttpMethod.GET,
@@ -99,7 +95,6 @@ public class ConsultaMutationResolver {
         }
     }
 
-    // -------------------- DELETAR --------------------
     @MutationMapping
     public Boolean deletarConsulta(@Argument String id,
                                    @Argument String token) {

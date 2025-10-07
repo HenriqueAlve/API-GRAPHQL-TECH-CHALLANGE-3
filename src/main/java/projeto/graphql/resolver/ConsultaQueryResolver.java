@@ -28,7 +28,6 @@ public class ConsultaQueryResolver {
         this.restTemplate = restTemplate;
     }
 
-    // -------------------- CONSULTAS --------------------
 
     @QueryMapping
     public List<ConsultaGraphQL> consultasPaciente(@Argument String pacienteId,
@@ -115,7 +114,7 @@ public class ConsultaQueryResolver {
         }
     }
 
-    // -------------------- PACIENTES --------------------
+
 
     @QueryMapping
     public List<PacienteGraphQL> pacientes(@Argument String token) {
@@ -143,7 +142,6 @@ public class ConsultaQueryResolver {
         }
     }
 
-    // -------------------- MÉDICOS --------------------
 
     @QueryMapping
     public List<MedicoGraphQL> medicos(@Argument String token) {
@@ -170,8 +168,6 @@ public class ConsultaQueryResolver {
                     "Erro ao buscar médico: " + e.getMessage());
         }
     }
-
-    // -------------------- MÉTODO AUXILIAR PARA CHAMAR API COM TOKEN --------------------
 
     private <T> T getWithToken(String url, Class<T> responseType, String token, Object... uriVariables) {
         HttpHeaders headers = new HttpHeaders();
